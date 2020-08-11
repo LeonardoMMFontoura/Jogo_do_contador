@@ -4,7 +4,7 @@ let p2 = document.querySelector("#p2");
 let p1Display = document.querySelector("#p1Display");
 let p2Display = document.querySelector("#p2Display");
 
-let reset = document.getElementById("reset");
+let resetbtn = document.getElementById("reset");
 
 let input = document.querySelector('input');
 
@@ -40,7 +40,7 @@ p2.addEventListener("click", function() {
 });
 
 
-reset.addEventListener("click", function(){
+resetbtn.addEventListener("click", function(){
     p1_pont = 0;
     p2_pont = 0;
     
@@ -51,10 +51,24 @@ reset.addEventListener("click", function(){
     p2Display.classList.remove("vencedor");
 
     gameOver = false;
+    reset();
 });
 
 
 input.addEventListener('change',function() {
-   pont_display.textContent = input.value; 
-   venceu = Number(input.value);
+   pont_display.textContent = this.value; 
+   venceu = Number(this.value);
 });
+
+function reset () {
+    p1_pont = 0;
+    p2_pont = 0;
+    
+    p1Display.textContent = 0;  
+    p2Display.textContent = 0;
+
+    p1Display.classList.remove("vencedor");
+    p2Display.classList.remove("vencedor");
+
+    gameOver = false;
+}
