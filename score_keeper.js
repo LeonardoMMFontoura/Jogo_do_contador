@@ -12,8 +12,9 @@ let venceu = 5;
 p1.addEventListener("click", function() {
     if(!gameOver){
         p1_pont++;
-        if(p1_pont == venceu){
+        if(p1_pont === venceu){
             gameOver = true;
+            p1Display.classList.add("vencedor");
         }
         p1Display.textContent = p1_pont;
     }
@@ -23,8 +24,9 @@ p1.addEventListener("click", function() {
 p2.addEventListener("click", function() {
     if(!gameOver)
         p2_pont++;
-        if(p2_pont == venceu){
+        if(p2_pont === venceu){
             gameOver = true;
+            p2Display.classList.add("vencedor");
         }
     p2Display.textContent = p2_pont;
 });
