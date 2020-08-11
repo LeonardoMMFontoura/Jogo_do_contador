@@ -1,8 +1,14 @@
 let p1 = document.querySelector("#p1");
 let p2 = document.querySelector("#p2");
+
 let p1Display = document.querySelector("#p1Display");
 let p2Display = document.querySelector("#p2Display");
+
 let reset = document.getElementById("reset");
+
+let input = document.querySelector('input');
+
+let pont_display = document.querySelector('p span');
 
 
 p1_pont = 0;
@@ -45,4 +51,10 @@ reset.addEventListener("click", function(){
     p2Display.classList.remove("vencedor");
 
     gameOver = false;
+});
+
+
+input.addEventListener('change',function() {
+   pont_display.textContent = input.value; 
+   venceu = Number(input.value);
 });
